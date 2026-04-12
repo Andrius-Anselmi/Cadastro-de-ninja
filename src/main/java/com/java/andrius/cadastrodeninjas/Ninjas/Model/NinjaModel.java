@@ -1,6 +1,9 @@
-package com.java.andrius.cadastrodeninjas;
+package com.java.andrius.cadastrodeninjas.Ninjas.Model;
 
+import com.java.andrius.cadastrodeninjas.Missoes.Model.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 //Entity transforma uma classe em uma entidade do Banco de Dados
 @Entity
@@ -13,6 +16,7 @@ public class NinjaModel  {
     private String nome;
     private String email;
     private int idade;
+    private List<MissoesModel> missoes;
 
     public NinjaModel() {
     }
