@@ -1,6 +1,6 @@
-package com.java.andrius.cadastrodeninjas.Missoes.Model;
+package com.java.andrius.cadastrodeninjas.Missoes;
 
-import com.java.andrius.cadastrodeninjas.Ninjas.Model.NinjaModel;
+import com.java.andrius.cadastrodeninjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
