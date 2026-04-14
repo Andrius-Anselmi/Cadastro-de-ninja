@@ -25,6 +25,7 @@ public class MissoesModel {
     //OneToMany significa que uma missão pode ter varios ninjas(NinjaModel)
     // mappedBY: JPA entende que é o mesmo relacionamento e usa a FK que já existe no Ninja
     //Missão usa a mesma FK pra achar os ninjas dela
+    //mappedBy = nome do atributo que representa o relacionamento na classe do lado
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninjas;
 
