@@ -3,7 +3,7 @@ package com.java.andrius.cadastrodeninjas.Missoes;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("missoes")
+@RequestMapping("/missoes")
 public class MissoesController {
 
     @PostMapping("/criar")
@@ -11,12 +11,12 @@ public class MissoesController {
         return  "Missão criada";
     }
 
-    @GetMapping("/todos")
+    @GetMapping("/listar")
     public String mostrarTodasAsMissoes(){
         return  "Mostrando missões";
     }
 
-    @GetMapping("/mostrarID")
+    @GetMapping("/listarID")
     public String mostrarPorId(){
         return "Mostrando missão por id";
     }
