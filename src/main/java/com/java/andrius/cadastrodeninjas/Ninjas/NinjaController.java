@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/ninjas")
@@ -20,8 +19,8 @@ public class NinjaController {
 
     //Adiconar Ninja (CREATE)
     @PostMapping("/criar")
-    public String criarNinja() {
-        return  "Ninja criado com sucesso";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+        return  ninjaService.criarNinja(ninja);
     }
 
     //Mostrar todos os ninjas (READ)
