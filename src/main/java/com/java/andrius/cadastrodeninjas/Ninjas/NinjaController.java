@@ -1,10 +1,17 @@
 package com.java.andrius.cadastrodeninjas.Ninjas;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/ninjas")
 public class NinjaController {
+
+    @Autowired
+    private NinjaService ninjaService;
 
     @GetMapping("/boasVindas")
     public String boasVindas(){
@@ -19,16 +26,15 @@ public class NinjaController {
 
     //Mostrar todos os ninjas (READ)
     @GetMapping("/listar")
-    public String mostrarTodosOsNinjas(){
-        return  "Mostrando todos os ninjas";
+    public List<NinjaModel> mostrarTodosOsNinjas(){
+        return  ninjaService.listarNinjas();
     }
 
     //Mostrar Ninja por ID (READ)
-    @GetMapping("/listarID")
-    public String mostrarPorId(int path){
-        return  "Mostrando ninja por id";
+    @GetMapping("listar/{id}")
+    public NinjaModel mostrarPorId(@PathVariable Long id){
+        return  ninjaService.listarNinjaPorId(id);
     }
-
 
     //Altera dados dos Ninja (UPDATE)
     @PutMapping("/alterarID")
