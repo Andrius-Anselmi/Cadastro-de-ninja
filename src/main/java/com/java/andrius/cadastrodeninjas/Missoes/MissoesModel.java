@@ -1,5 +1,6 @@
 package com.java.andrius.cadastrodeninjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.java.andrius.cadastrodeninjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,7 @@ public class MissoesModel {
     //Missão usa a mesma FK pra achar os ninjas dela
     //mappedBy = nome do atributo que representa o relacionamento na classe do lado
     @OneToMany(mappedBy = "missoes")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 
 
