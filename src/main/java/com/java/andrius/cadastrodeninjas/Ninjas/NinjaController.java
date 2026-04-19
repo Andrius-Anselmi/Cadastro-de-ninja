@@ -51,4 +51,9 @@ public class NinjaController {
             return "Não foi possível deletar o ninja";
         }
     }
+
+    @PutMapping("/alterar/{id}")
+    public NinjaModel alterarPorId(@RequestBody NinjaModel ninjaAtualizado, @PathVariable Long id){
+       return ninjaService.alterarNinjaPorId(ninjaAtualizado,id);
+    }
 }
