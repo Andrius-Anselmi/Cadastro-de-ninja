@@ -34,6 +34,9 @@ public class NinjaModel  {
     @Column(name = "img_url")
     private String imgUrl;
 
+    @Column(name = "rank")
+    private String rank;
+
 
     //No código, o @ManyToOne dentro da classe NinjaModel, está dizendo ao
     // banco de dados: "Muitos objetos desta classe (Ninja) podem apontar para um
