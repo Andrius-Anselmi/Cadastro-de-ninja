@@ -11,6 +11,7 @@ public class NinjaController {
 
     @Autowired
     private NinjaService ninjaService;
+    private NinjaMapper ninjaMapper;
 
     @GetMapping("/boasVindas")
     public String boasVindas(){
@@ -19,7 +20,7 @@ public class NinjaController {
 
     //Adiconar Ninja (CREATE)
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja) {
         return  ninjaService.criarNinja(ninja);
     }
 
