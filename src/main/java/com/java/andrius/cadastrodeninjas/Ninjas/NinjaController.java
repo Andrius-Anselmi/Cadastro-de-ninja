@@ -37,7 +37,7 @@ public class NinjaController {
     }
 
     //Altera dados dos Ninja (UPDATE)
-    @PutMapping("/alterar/{id}")
+    @PatchMapping("/alterar/{id}")
     public NinjaDTO alterarPorId(@RequestBody NinjaDTO ninja, @PathVariable Long id){
         return ninjaService.alterarNinjaPorId(ninja,id);
     }

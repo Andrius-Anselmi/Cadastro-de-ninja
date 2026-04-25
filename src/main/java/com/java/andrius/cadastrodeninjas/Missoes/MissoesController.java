@@ -13,22 +13,22 @@ public class MissoesController {
     MissoesService missoesService;
 
     @PostMapping("/criar")
-    public MissoesModel criarMissao(@RequestBody MissoesModel missao){
+    public MissoesDTO criarMissao(@RequestBody MissoesDTO missao){
         return missoesService.criarMissao(missao);
     }
 
     @GetMapping("/listar")
-    public List<MissoesModel> mostrarTodasAsMissoes(){
+    public List<MissoesDTO> mostrarTodasAsMissoes(){
         return missoesService.listarMissoes();
     }
 
     @GetMapping("/listar/{id}")
-    public MissoesModel mostrarPorId(@PathVariable Long id){
+    public MissoesDTO mostrarPorId(@PathVariable Long id){
         return missoesService.listarMissaoPorId(id);
     }
 
     @PutMapping("/alterar/{id}")
-    public MissoesModel alterarPorId(@PathVariable Long id, @RequestBody MissoesModel missoes){
+    public MissoesDTO alterarPorId(@PathVariable Long id, @RequestBody MissoesDTO missoes){
         return missoesService.alteraMissaoPorId(id, missoes);
         }
 
